@@ -1,0 +1,10 @@
+*.swp
+
+log
+
+tmp
+
+*.sqlite3
+
+.NERDTreeBookmarks
+
