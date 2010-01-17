@@ -10,13 +10,31 @@
   <link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print">    
   <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
+  <%= stylesheet_link_tag 'app' %>
+
 </head>
 <body>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
 <div class="container">
-  <div class="span-24 last"><%= yield %></div>
+
+  <div class="prepend-7 span-17 last" style="border: 1px solid black; height: 10em;"><h1>Logo</h1></div>
+
+  <div id="sidebar" class="span-5">
+    <ul>
+      <li><h3>最新消息</h3></li>
+      <li><h3>相關辦法</h3></li>
+      <li><h3>申請諮詢</h3></li>
+      <li><h3>文法疑難雜症</h3></li>
+      <li><h3>寫作指引</h3></li>
+      <li><h3>演講</h3></li>
+      <li><h3>FAQ</h3></li>
+      <li><h3>管理</h3></li>
+    </ul>
+  </div>
+  <div class="span-19 last"><%= yield %></div>
+
 </div>
 
 </body>
