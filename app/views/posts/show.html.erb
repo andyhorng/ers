@@ -1,18 +1,14 @@
 <p>
-  <b>Title:</b>
   <%=h @post.title %>
 </p>
 
 <p>
-  <b>Type:</b>
-  <%=h @post.type %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%=h @post.content %>
+  <%= @post.content %>
 </p>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if logined? %>
+  <%= link_to 'Edit', edit_post_path(:id => @post, :post_type => @post.post_type) %> |
+<% end %>
+
 <%= link_to 'Back', posts_path %>

@@ -1,0 +1,10 @@
+<% form_for @admin_session do |f| %>
+  <fieldset>
+    <legend>登入</legend>
+    <%= f.label :login, '帳號' %>
+    <%= f.text_field :login %>
+    <%= f.label :password, '密碼' %>
+    <%= f.password_field :password %>
+    <%= f.submit "登入" %>
+  </fieldset> 
+<% end %>
