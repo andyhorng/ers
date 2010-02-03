@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag 'datePicker' %>
+<%= javascript_include_tag 'date' %>
+<%= javascript_include_tag 'jquery.datePicker-2.1.2.js' %>
+<% javascript_tag do %> 
+  $.dpText = {
+  TEXT_CHOOSE_DATE : '選擇日期'
+  };
+  $(function() {
+  $('#order_odate').datePicker({startDate : (new Date()).asString()});
+  });
+<% end %>
+
+
+<% form_for @order do |f| %>
+  <p>
+  <%= f.label :sid, '學號' %>
+  <%= f.text_field :sid %>
+  </p>
+  <p>
+  <%= f.label :sclass, '班級' %>
+  <%= f.text_field :sclass %>
+  </p>
+  <p>
+  <%= f.label :name, '姓名' %>
+  <%= f.text_field :name %>
+  </p>
+  <p>
+  <%= f.label :phone, '手機' %>
+  <%= f.text_field :phone %>
+  </p>
+  <p>
+  <%= f.label :odate, '預約日期' %>
+  <%= f.text_field :odate %>
+  </p>
+  <p>
+  <%= f.label :otime, '預約時間' %>
+  <%= f.time_select :otime, {:minute_step => 30} %>
+  </p>
+  <%= f.submit '預約' %>
+<% end %>
+

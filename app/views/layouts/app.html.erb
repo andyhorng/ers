@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print">    
-  <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <!--[if lt IE 8]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
   <%= stylesheet_link_tag 'app' %>
 
@@ -40,7 +40,7 @@
     <ul>
       <li><h3><%= link_to "最新消息", posts_url(:post_type => 'news') %></h3></li>
       <li><h3>相關辦法</h3></li>
-      <li><h3>申請諮詢</h3></li>
+      <li><h3><%= link_to "申請諮詢", new_order_url %></h3></li>
       <li><h3><%= link_to "文法疑難雜症", posts_url(:post_type => 'grammar_difficulty') %></h3></li>
       <li><h3><%= link_to "寫作指引", posts_url(:post_type => 'writing_guides') %></h3></li>
       <li><h3>演講</h3></li>

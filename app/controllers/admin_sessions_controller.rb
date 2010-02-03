@@ -10,6 +10,7 @@ class AdminSessionsController < ApplicationController
       flash[:notice] = "Login Successful!"
       redirect_to root_url
     else 
+      flash[:notice] = "帳號密碼錯誤!"
       redirect_to new_admin_session_url
     end
   end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  odate: 2010-02-03
+  otime: 2010-02-03 22:28:32
+  sid: MyString
+  sclass: MyString
+  name: MyString
+  phone: MyString
+
+two:
+  odate: 2010-02-03
+  otime: 2010-02-03 22:28:32
+  sid: MyString
+  sclass: MyString
+  name: MyString
+  phone: MyString
