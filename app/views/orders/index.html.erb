@@ -1,0 +1,20 @@
+
+<table>
+    <tr>
+      <td>學號</td>
+      <td>班級</td>
+      <td>姓名</td>
+      <td>手機</td>
+      <td>預約時間</td>
+    </tr>
+
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.sid %></td>
+      <td><%= order.sclass %></td>
+      <td><%= order.name %></td>
+      <td><%= order.phone %></td>
+      <td><%= order.odatetime %></td>
+    </tr>
+  <% end %>
+</table>

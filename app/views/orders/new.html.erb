@@ -6,7 +6,12 @@
   TEXT_CHOOSE_DATE : '選擇日期'
   };
   $(function() {
-  $('#order_odate').datePicker({startDate : (new Date()).asString()});
+    $('#odate').datePicker({startDate : (new Date()).asString()});
+    $('form').submit(function() {
+      var t = $('#otime_h').val() + ':' + $('#otime_m').val();
+      $('#order_odatetime').val($('#odate').val() + ' ' + t);
+    });
+
   });
 <% end %>
 
@@ -29,13 +34,23 @@
   <%= f.text_field :phone %>
   </p>
   <p>
-  <%= f.label :odate, '預約日期' %>
-  <%= f.text_field :odate %>
+  <label for="odate">預約日期</label>
+  <%= text_field_tag :odate %>
   </p>
   <p>
-  <%= f.label :otime, '預約時間' %>
-  <%= f.time_select :otime, {:minute_step => 30} %>
+  <label for="otime_h">預約時間</label>
+  <select id="otime_h">
+    <% (0..23).each do |i| %>
+      <%= %(<option value="#{i}">#{sprintf("%02d", i)}</option>) %>
+    <% end %>
+  </select>
+  :
+  <select id="otime_m">
+    <option value="0">00</option>
+    <option value="30">30</option>
+  </select>
   </p>
+  <%= f.hidden_field :odatetime %>
   <%= f.submit '預約' %>
 <% end %>
 

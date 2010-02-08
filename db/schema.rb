@@ -21,8 +21,7 @@ ActiveRecord::Schema.define(:version => 20100203142832) do
   end
 
   create_table "orders", :force => true do |t|
-    t.date     "odate"
-    t.time     "otime"
+    t.datetime "odatetime"
     t.string   "sid"
     t.string   "sclass"
     t.string   "name"

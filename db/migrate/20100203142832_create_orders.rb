@@ -1,8 +1,7 @@
 class CreateOrders < ActiveRecord::Migration
   def self.up
     create_table :orders do |t|
-      t.date :odate
-      t.time :otime
+      t.datetime :odatetime
       t.string :sid
       t.string :sclass
       t.string :name
