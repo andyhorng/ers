@@ -1,0 +1,27 @@
+
+tw:
+  activerecord:
+    models:
+      order: 預約
+    attributes:
+      order:
+        sid: 學號
+        sclass: 班級
+        name: 姓名
+        phone: 手機
+        odatetime: 預約時間
+        
+    errors:
+      models:
+        order:
+          blank: 不能為空，請填入資料
+          invalid: 格式有誤
+          attributes:
+            odatetime:
+              taken: 已有人預約，請選擇其它時段
+      template:
+        header: 資料輸入有誤
+        body: 有問題的欄位：
+
+
+      

@@ -2,14 +2,17 @@
 <%= javascript_include_tag 'date' %>
 <%= javascript_include_tag 'jquery.datePicker-2.1.2.js' %>
 <% javascript_tag do %> 
+  Date.format = 'yyyy-mm-dd'
   $.dpText = {
   TEXT_CHOOSE_DATE : '選擇日期'
   };
   $(function() {
     $('#odate').datePicker({startDate : (new Date()).asString()});
     $('form').submit(function() {
-      var t = $('#otime_h').val() + ':' + $('#otime_m').val();
-      $('#order_odatetime').val($('#odate').val() + ' ' + t);
+      if( $('#otime_h').val() != '-' && $('#otime_m').val() != '-' ) {
+        var t = $('#otime_h').val() + ':' + $('#otime_m').val();
+        $('#order_odatetime').val($('#odate').val() + ' ' + t);
+      }
     });
 
   });
@@ -17,6 +20,7 @@
 
 
 <% form_for @order do |f| %>
+  <%= error_messages_for :order %>
   <p>
   <%= f.label :sid, '學號' %>
   <%= f.text_field :sid %>
@@ -40,12 +44,14 @@
   <p>
   <label for="otime_h">預約時間</label>
   <select id="otime_h">
+    <option>-</option>
     <% (0..23).each do |i| %>
       <%= %(<option value="#{i}">#{sprintf("%02d", i)}</option>) %>
     <% end %>
   </select>
   :
   <select id="otime_m">
+    <option>-</option>
     <option value="0">00</option>
     <option value="30">30</option>
   </select>

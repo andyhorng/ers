@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_logined, :only => ['edit', 'new', 'create', 'destroy', 'update']
 
   def index
-    @posts = Post.post_type(params[:post_type])
+    @posts = Post.post_type(params[:post_type]).paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

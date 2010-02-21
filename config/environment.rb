@@ -37,13 +37,16 @@ Rails::Initializer.run do |config|
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  # config.i18n.default_locale = :de
+  config.i18n.default_locale = :tw
   #
   # gems
   config.gem "authlogic"
   config.gem "jrails"
+  config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org' 
 end
 
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(
-  :for_created_at => '%Y/%m/%d %H:%M'
+  :for_created_at => '%Y/%m/%d %H:%M',
+  :for_order => '%Y/%m/%d %H:%M'
 )
+ActionView::Base.field_error_proc = Proc.new {|html_tag, instance| %(<span>#{html_tag}</span>)}
