@@ -6,3 +6,8 @@
   text-align: right;
 }
 
+div#banner {
+  background-image: url(/images/title3.jpg);
+  background-repeat: no-repeat;
+  height: 214px;
+}
