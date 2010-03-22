@@ -1,5 +1,91 @@
+body {
+  background-color: #202A33;
+}
+
+div#main {
+  background-color: white;
+  border-bottom: 15px solid #E1E1E1;
+  border-top: 15px solid #E1E1E1;
+  height: 800px;
+}
+
+div#left-border {
+  border-right: 10px solid #E1E1E1;
+  margin-right: 0;
+  height: 830px;
+}
+
+div#right-border {
+  border-left: 10px solid #E1E1E1;
+  margin-left: -10px;
+  height: 830px;
+}
+
+#sidebar-title {
+  background-color: #656E75;
+  height: 2em;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+}
+
+div#main a {
+  color: #80BF2A;
+  text-transform: capitalize;
+}
+
+div#content {
+}
+
+.post_title {
+  font-size: large;
+  overflow: hidden;
+}
+
+td.time {
+  color: #1A629C;
+  text-align: right;
+}
+
+td.readmore {
+  text-align: right;
+  width: 8em;
+}
+
+td.oplink {
+  text-align: right;
+  width: 3em;
+}
+
+div#post_content {
+  margin-top: 2em;
+  overflow: auto;
+  height: 450px;
+}
+
+div#post_content a {
+  color: blue;
+}
+
+/*
+body > div.container {
+  background-color: #EFEFEF;
+}
+*/
+
 #sidebar ul {
   list-style-type: none;
+  padding-left: 2em;
+}
+
+#sidebar ul li {
+  border-bottom: 1px inset gray;
+  height: 2em;
+}
+#sidebar ul a {
+  color: #6A6A6A;
+  text-decoration: none;
+  display: block;
 }
 
 #manage-nav {
@@ -11,3 +97,4 @@ div#banner {
   background-repeat: no-repeat;
   height: 214px;
 }
+

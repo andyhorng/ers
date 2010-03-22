@@ -1,11 +1,14 @@
-<p>
+<div class="post_title">
   <%=h @post.title %>
-</p>
+</div>
 
-<p>
+<hr />
+
+<div id="post_content">
   <%= @post.content %>
-</p>
+</div>
 
+<hr />
 
 <% if logined? %>
   <%= link_to 'Edit', edit_post_path(:id => @post, :post_type => @post.post_type) %> |
