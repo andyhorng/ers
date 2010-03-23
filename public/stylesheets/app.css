@@ -1,5 +1,5 @@
 body {
-  background-color: #202A33;
+  background-color: #273743;
 }
 
 div#main {
@@ -27,6 +27,8 @@ div#right-border {
   color: white;
   text-align: center;
   padding-top: 1em;
+  background-image: url(/images/sidebar-title.png);
+  background-repeat: repeat-x;
 }
 
 div#main a {
