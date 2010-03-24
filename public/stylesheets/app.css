@@ -4,22 +4,8 @@ body {
 
 div#main {
   background-color: white;
-  border-bottom: 15px solid #E1E1E1;
-  border-top: 15px solid #E1E1E1;
-  height: 800px;
 }
 
-div#left-border {
-  border-right: 10px solid #E1E1E1;
-  margin-right: 0;
-  height: 830px;
-}
-
-div#right-border {
-  border-left: 10px solid #E1E1E1;
-  margin-left: -10px;
-  height: 830px;
-}
 
 #sidebar-title {
   background-color: #656E75;
@@ -62,7 +48,6 @@ td.oplink {
 div#post_content {
   margin-top: 2em;
   overflow: auto;
-  height: 450px;
 }
 
 div#post_content a {
