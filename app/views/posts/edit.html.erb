@@ -15,6 +15,9 @@
 <% end %>
 
 <%= link_to 'Show', post_path(:id => @post, :post_type => @post.post_type) %> |
-<%= link_to 'Back', posts_path %>
+
+<% unless params[:post_type] == 'related' %>
+  <%= link_to 'Back', posts_path %>
+<% end %>
 
 

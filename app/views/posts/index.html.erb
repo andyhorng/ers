@@ -1,7 +1,7 @@
 <table class="post_table">
 <% @posts.each do |post| %>
   <tr>
-    <td class="post_title" colspan="3"><%= h(post.title) %></td>
+    <td class="post_title" colspan="4"><%= h(post.title) %></td>
   </tr>
   <tr>
     <td class="time"><%=h post.created_at.to_s(:for_created_at) %></td>

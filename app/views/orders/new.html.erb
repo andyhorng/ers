@@ -20,7 +20,7 @@
 
 
 <% form_for @order do |f| %>
-  <%= error_messages_for :order %>
+  <%= error_messages_for :order, :class => 'error' %>
   <p>
   <%= f.label :sid, '學號' %>
   <%= f.text_field :sid %>

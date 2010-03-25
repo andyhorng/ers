@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :orders
 
+  map.related 'related', :controller => 'posts', :action => 'show', :post_type => 'related'
 
   map.resources :posts, :path_prefix => ':post_type'
 

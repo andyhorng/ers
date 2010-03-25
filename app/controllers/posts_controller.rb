@@ -10,7 +10,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+
+    unless params[:post_type] == 'related'
+      @post = Post.find(params[:id])
+    else
+      @post = Post.post_type(params[:post_type]).first
+    end
 
     respond_to do |format|
       format.html # show.html.erb

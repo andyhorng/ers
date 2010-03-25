@@ -4,6 +4,19 @@ body {
 
 div#main {
   background-color: white;
+  background-image: url(/images/shadow_bg.png);
+  background-position: bottom right;
+  background-repeat: repeat-y;
+  margin-right: -10px;
+  padding-bottom: 10px;
+}
+
+div#shadow_bottom {
+  height: 20px;
+  background-image: url(/images/shadow_bottom.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  width: 800px;
 }
 
 
@@ -23,8 +36,15 @@ div#main a {
 }
 
 div#content {
+  padding-right: 10px;
+  margin-left: -10px;
 }
 
+#footer {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
+}
 .post_title {
   font-size: large;
   overflow: hidden;
@@ -60,6 +80,11 @@ body > div.container {
 }
 */
 
+#sidebar {
+  margin-right: -15px;
+  padding-bottom: 30px;
+}
+
 #sidebar ul {
   list-style-type: none;
   padding-left: 2em;
@@ -80,8 +105,8 @@ body > div.container {
 }
 
 div#banner {
-  background-image: url(/images/title3.jpg);
+  background-image: url(/images/title3.png);
   background-repeat: no-repeat;
-  height: 214px;
+  height: 194px;
 }
 
