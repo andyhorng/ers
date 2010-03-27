@@ -1,3 +1,13 @@
+<script type="text/javascript">
+  $(function() {
+      $('p.notice').delay(5000).fadeOut();
+      $("form textarea").ckeditor(function() {
+        // nothing
+        }, 
+        { toolbar: [['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink','-', 'Image', '-', 'About']] }
+        );
+      });
+</script>
 
 <% form_for(@post, :url => posts_path(:post_type => params[:post_type])) do |f| %>
 

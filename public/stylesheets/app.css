@@ -40,6 +40,21 @@ div#content {
   margin-left: -10px;
 }
 
+div#content textarea {
+  width: 90%;
+}
+
+div.answer_form {
+  padding-left: 2em;
+  background-image: url(/images/reply.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.answer_btn {
+  margin-left: 2em;
+}
+
 #footer {
   text-align: center;
   color: gray;
@@ -50,7 +65,7 @@ div#content {
   overflow: hidden;
 }
 
-td.time {
+.time {
   color: #1A629C;
   text-align: right;
 }

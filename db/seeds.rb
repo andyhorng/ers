@@ -7,4 +7,4 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 
 Admin.create(:login => 'admin1', :password => 'admin1', :password_confirmation => 'admin1')
-Posts.create(:post_type => 'related', :title => '相關辦法', :content => '這是相關辦法')
+Post.create(:post_type => 'related', :title => '相關辦法', :content => '這是相關辦法')

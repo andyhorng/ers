@@ -1,0 +1,58 @@
+<script type="text/javascript">
+  $(function() {
+      $('#faq_form').hide();
+      $('#faq_btn').click(function() {
+        $('#faq_form').toggle('slow');
+        $(this).remove();
+        });
+      $('.answer_btn').click(function() {
+        $(this).next('div.answer_form').toggle('slow');
+        $(this).prev('div.answer_form').remove();
+        $(this).remove();
+        });
+    });
+</script>
+
+
+<button id="faq_btn">留言</button>
+
+<div id="faq_form">
+  <% form_for @faq do |f| %>
+    <%= f.label :question, "內容" %>
+    <p>
+    <%= f.text_area :question, :rows => 5 %>
+    </p>
+    <%= f.submit "送出" %>
+  <% end %>
+</div>
+<% @faqs.each do |faq| %>
+  <p>
+    <%=h faq.question %>
+  </p>
+  <div class="time"><%= faq.created_at.to_s(:for_created_at) %></div>
+
+  <% if faq.answer %>
+    <div class="answer_form">
+      <p>
+      <%=h faq.answer %>
+      </p>
+    </div>
+  <% end %>
+
+  <% if logined? %>
+    <button class="answer_btn">回應</button>
+
+    <div class="answer_form" style="display: none">
+      <% form_for faq do |f| %>
+        <%= f.text_area :answer, :rows => 5 %>
+        <%= f.submit '送出' %>
+      <% end %>
+    </div>
+
+  <p> <%= link_to '刪除', faq, :method => :delete %> </p>
+  <% end %>
+
+  <hr />
+<% end %>
+
+<%= will_paginate %>

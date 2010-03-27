@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :admin_sessions, :only => ['new', 'create', 'destroy']
 
+  map.resources :faqs, :only => ['index', 'create', 'destroy', 'update']
+
   map.root :controller => 'posts', :action => 'index', :post_type => 'news'
 
 
