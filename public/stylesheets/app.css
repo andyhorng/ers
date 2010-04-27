@@ -51,6 +51,12 @@ div.answer_form {
   background-repeat: no-repeat;
 }
 
+div.answer_form > p {
+  background-color: #999999;
+  color: #FAFAFA;
+  padding-left: 0.5em;
+}
+
 .answer_btn {
   margin-left: 2em;
 }
@@ -61,6 +67,9 @@ div.answer_form {
   margin-bottom: 20px;
 }
 .post_title {
+  background-image: url(/images/post_icon_32.png);
+  background-repeat: no-repeat;
+  padding-left: 32px;
   font-size: large;
   overflow: hidden;
 }
@@ -72,7 +81,7 @@ div.answer_form {
 
 td.readmore {
   text-align: right;
-  width: 8em;
+  width: 20%;
 }
 
 td.oplink {
@@ -108,7 +117,13 @@ body > div.container {
 #sidebar ul li {
   border-bottom: 1px inset gray;
   height: 2em;
+  padding-top: 2px;
 }
+
+#sidebar ul li:hover {
+  background-color: #6EE0F6;
+}
+
 #sidebar ul a {
   color: #6A6A6A;
   text-decoration: none;
