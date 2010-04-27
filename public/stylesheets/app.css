@@ -36,6 +36,7 @@ div#main a {
 }
 
 div#content {
+  margin-top: 1em;
   padding-right: 10px;
   margin-left: -10px;
 }
