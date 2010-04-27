@@ -1,10 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :orders
 
+  map.related 'related', :controller => 'posts', :action => 'show', :post_type => 'related'
 
   map.resources :posts, :path_prefix => ':post_type'
 
   map.resources :admin_sessions, :only => ['new', 'create', 'destroy']
+
+  map.resources :faqs, :only => ['index', 'create', 'destroy', 'update']
 
   map.root :controller => 'posts', :action => 'index', :post_type => 'news'
 

@@ -1,5 +1,133 @@
+body {
+  background-color: #273743;
+}
+
+div#main {
+  background-color: white;
+  background-image: url(/images/shadow_bg.png);
+  background-position: bottom right;
+  background-repeat: repeat-y;
+  margin-right: -10px;
+  padding-bottom: 10px;
+}
+
+div#shadow_bottom {
+  height: 20px;
+  background-image: url(/images/shadow_bottom.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  width: 800px;
+}
+
+
+#sidebar-title {
+  background-color: #656E75;
+  height: 2em;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  background-image: url(/images/sidebar-title.png);
+  background-repeat: repeat-x;
+}
+
+div#main a {
+  color: #80BF2A;
+  text-transform: capitalize;
+}
+
+div#content {
+  padding-right: 10px;
+  margin-left: -10px;
+}
+
+div#content textarea {
+  width: 90%;
+}
+
+div.answer_form {
+  padding-left: 2em;
+  background-image: url(/images/reply.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+div.answer_form > p {
+  background-color: #999999;
+  color: #FAFAFA;
+  padding-left: 0.5em;
+}
+
+.answer_btn {
+  margin-left: 2em;
+}
+
+#footer {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
+}
+.post_title {
+  background-image: url(/images/post_icon_32.png);
+  background-repeat: no-repeat;
+  padding-left: 32px;
+  font-size: large;
+  overflow: hidden;
+}
+
+.time {
+  color: #1A629C;
+  text-align: right;
+}
+
+td.readmore {
+  text-align: right;
+  width: 20%;
+}
+
+td.oplink {
+  text-align: right;
+  width: 3em;
+}
+
+div#post_content {
+  margin-top: 2em;
+  overflow: auto;
+}
+
+div#post_content a {
+  color: blue;
+}
+
+/*
+body > div.container {
+  background-color: #EFEFEF;
+}
+*/
+
+#sidebar {
+  margin-right: -15px;
+  padding-bottom: 30px;
+}
+
 #sidebar ul {
   list-style-type: none;
+  padding-left: 2em;
+}
+
+#sidebar ul li {
+  border-bottom: 1px inset gray;
+  height: 2em;
+  padding-top: 2px;
+}
+
+#sidebar ul li:hover {
+  background-color: #6EE0F6;
+}
+
+#sidebar ul a {
+  color: #6A6A6A;
+  text-decoration: none;
+  display: block;
 }
 
 #manage-nav {
@@ -7,7 +135,8 @@
 }
 
 div#banner {
-  background-image: url(/images/title3.jpg);
+  background-image: url(/images/title3.png);
   background-repeat: no-repeat;
-  height: 214px;
+  height: 194px;
 }
+

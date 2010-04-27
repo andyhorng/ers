@@ -17,59 +17,53 @@
   <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
   <script type="text/javascript" src="/ckeditor/adapters/jquery.js"></script>
 
-  <script type="text/javascript">
-    $(function() {
-        $('p.notice').delay(5000).fadeOut();
-        $("form textarea").ckeditor(function() {
-          // nothing
-          }, 
-          { toolbar: [['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink','-', 'Image', '-', 'About']] }
-          );
-        });
-  </script>
 
 </head>
 <body>
+  <div class="container">
+    <div class="prepend-2 span-20 append-2 last">
+      <div id="main" class="clearfix">
+        <div class="span-20 last">
+          <div id="banner"></div>
+        </div>
+        <div class="span-5 colborder">
+          <div id="sidebar">
+            <h3 id="sidebar-title">Main Menu</h3>
+            <ul>
+              <li><h3><%= link_to "最新消息", posts_url(:post_type => 'news') %></h3></li>
+              <li><h3><%= link_to "相關辦法", related_url %></h3></li>
+              <% if logined? %>
+                <li><h3><%= link_to "申請諮詢", orders_url %></h3></li>
+              <% else %>
+                <li><h3><%= link_to "申請諮詢", new_order_url %></h3></li>
+              <% end %>
+              <li><h3><%= link_to "文法疑難雜症", posts_url(:post_type => 'grammar_difficulty') %></h3></li>
+              <li><h3><%= link_to "寫作指引", posts_url(:post_type => 'writing_guides') %></h3></li>
+              <li><h3>演講</h3></li>
+              <li><h3><%= link_to "FAQ", faqs_url %></h3></li>
+              <% unless logined? %>
+                <li><h3><%= link_to "管理", new_admin_session_url %></h3></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="span-14 last">
+          <div id="content">
+            <% if logined? %>
+              <div id="manage-nav"><%= link_to "登出", admin_session_url(current_admin_session), {:method => :delete} %></div>
+            <% end %>
 
-<div class="container">
+            <% if flash[:notice] %>
+              <p class="notice"><%= flash[:notice] %></p>
+            <% end %>
 
-  <div class="prepend-2 span-22 last">
-    <div id="banner"></div>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <div id="shadow_bottom" class="span-20 last"></div>
+    </div>
+    <div class="prepend-2 span-20 last" id="footer">©2010</div>
   </div>
-  
-
-  <div id="sidebar" class="span-5">
-    <ul>
-      <li><h3><%= link_to "最新消息", posts_url(:post_type => 'news') %></h3></li>
-      <li><h3>相關辦法</h3></li>
-      <% if logined? %>
-        <li><h3><%= link_to "申請諮詢", orders_url %></h3></li>
-      <% else %>
-        <li><h3><%= link_to "申請諮詢", new_order_url %></h3></li>
-      <% end %>
-      <li><h3><%= link_to "文法疑難雜症", posts_url(:post_type => 'grammar_difficulty') %></h3></li>
-      <li><h3><%= link_to "寫作指引", posts_url(:post_type => 'writing_guides') %></h3></li>
-      <li><h3>演講</h3></li>
-      <li><h3>FAQ</h3></li>
-      <% unless logined? %>
-        <li><h3><%= link_to "管理", new_admin_session_url %></h3></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="span-19 last">
-
-    <% if logined? %>
-      <div id="manage-nav"><%= link_to "登出", admin_session_url(current_admin_session), {:method => :delete} %></div>
-    <% end %>
-
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-
-    <%= yield %>
-  </div>
-
-</div>
-
 </body>
 </html>

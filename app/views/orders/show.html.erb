@@ -11,5 +11,5 @@
 手機: <%= @order.phone %>
 </p>
 <p>
-預約時間: <%= @order.odatetime %>
+預約時間: <%= @order.odatetime.to_s(:for_created_at) %>
 </p>

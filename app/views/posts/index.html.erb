@@ -1,11 +1,14 @@
-<table>
+<table class="post_table">
 <% @posts.each do |post| %>
   <tr>
-    <td><%= link_to h(post.title), post_url(:post_type => params[:post_type], :id => post) %></td>
-    <td><%=h post.created_at.to_s(:for_created_at) %></td>
+    <td class="post_title" colspan="4"><%= h(post.title) %></td>
+  </tr>
+  <tr>
+    <td class="time"><%=h post.created_at.to_s(:for_created_at) %></td>
+    <td class="readmore">[<%= link_to "read more...", post_url(:post_type => params[:post_type], :id => post) %>]</td>
     <% if logined? %>
-      <td><%= link_to 'Edit', edit_post_url(:post_type => params[:post_type], :id => post) %></td>
-      <td><%= link_to 'Destroy', post_url(:post_type => params[:post_type], :id => post), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td class="oplink"><%= link_to 'Edit', edit_post_url(:post_type => params[:post_type], :id => post) %></td>
+      <td class="oplink"><%= link_to 'Destroy', post_url(:post_type => params[:post_type], :id => post), :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
