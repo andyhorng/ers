@@ -6,5 +6,5 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-Admin.create(:login => 'admin1', :password => 'admin1', :password_confirmation => 'admin1')
+Admin.create(:login => 'must.ect', :password => 'mustaflc', :password_confirmation => 'mustaflc')
 Post.create(:post_type => 'related', :title => '相關辦法', :content => '這是相關辦法')
