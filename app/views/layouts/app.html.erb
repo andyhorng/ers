@@ -39,7 +39,7 @@
               <% end %>
               <li><h3><%= link_to "文法疑難雜症", posts_url(:post_type => 'grammar_difficulty') %></h3></li>
               <li><h3><%= link_to "寫作指引", posts_url(:post_type => 'writing_guides') %></h3></li>
-              <li><h3>演講</h3></li>
+              <li><h3><%= link_to "演講", posts_url(:post_type => 'speeches') %></h3></li>
               <li><h3><%= link_to "FAQ", faqs_url %></h3></li>
               <% unless logined? %>
                 <li><h3><%= link_to "管理", new_admin_session_url %></h3></li>
